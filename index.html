@@ -166,8 +166,15 @@
   </div>
 </div>
 
+
+
+
+
+
+
 <!-- Sidebar Menu -->
-<div class="ui vertical inverted sidebar menu">
+<div class="ui vertical visible inverted sidebar menu">
+<!--<div class="ui vertical visible sticky menu fixed top">-->
   <a class="active item">Notes</a>
   <a class="item">Note1</a>
   <a class="item">Note2</a>
@@ -217,17 +224,26 @@
 
   <br><br><br><br><br>
 
+<!-- Create a Note Form -->
 <div class="ui container">
-  <div class="ui form">
-    <div class="field">
-      <h3 class="ui header">New Note</h3>
-      <textarea></textarea>
-      <div class="item">
-        <a class="ui button">Save</a>
-        <a class="ui button">Reset</a>
+  <h3 class="ui-header">Create a New Note</h3>
+  <div class="ui inverted segment">
+  <div class="ui inverted form">
+    <div class="two fields">
+      <div class="field">
+        <label>Title</label>
+        <input placeholder="Title" type="text">
+        <br><br>
+        <label>Note</label>
+        <textarea placeholder="Type your note text here"></textarea>
       </div>
     </div>
+    <div class="inline field">
+    </div>
+    <div class="ui submit button">Submit</div>
   </div>
+</div>
+</div>
 </div>
   <br><br><br><br><br>
 
