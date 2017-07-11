@@ -9,7 +9,7 @@ function addNewNote(notesList) {
     event.preventDefault()
     let newTitle = ${"#notetitle"}.val()
     let newBody = $("#notebody").val()
-    let newNoteNum = $("#noteid").val()
+    // adapter.addNote(title, body).then(stringify)
     notesList.addNote(newTitle, newNote, newNoteNum)
     $("#notes-list").html(notesList.render())
     $("#side-bar-notes").html(notesList.renderSideBarNote())

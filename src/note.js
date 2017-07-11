@@ -6,7 +6,7 @@ class Note{
   }
 
   renderSideBarNote() {
-    return (`<div class='sidebarclass' id=${this.noteId}>
+    return (`<div class='sidebarclass' data-id=${this.noteId}>
             <span>${this.title}</span><br>
             <span>${this.body.slice(0,40)}...</span><br>
             <button class='fullnote' data-id=${this.noteId}>Full note</button><br>
@@ -19,7 +19,7 @@ class Note{
             <span>${this.body}</span><br>
             </div>`)
   }
-  
+
 }
 
 
