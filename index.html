@@ -10,23 +10,23 @@
       integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
       crossorigin="anonymous"></script>
     <script src="semantic/dist/semantic.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="../dist/components/reset.css">
-    <link rel="stylesheet" type="text/css" href="../dist/components/site.css">
+    <link rel="stylesheet" type="text/css" href="semantic/dist/components/reset.css">
+    <link rel="stylesheet" type="text/css" href="semantic/dist/components/site.css">
 
-    <link rel="stylesheet" type="text/css" href="../dist/components/container.css">
-    <link rel="stylesheet" type="text/css" href="../dist/components/grid.css">
-    <link rel="stylesheet" type="text/css" href="../dist/components/header.css">
-    <link rel="stylesheet" type="text/css" href="../dist/components/image.css">
-    <link rel="stylesheet" type="text/css" href="../dist/components/menu.css">
+    <link rel="stylesheet" type="text/css" href="semantic/dist/components/container.css">
+    <link rel="stylesheet" type="text/css" href="semantic/dist/components/grid.css">
+    <link rel="stylesheet" type="text/css" href="semantic/dist/components/header.css">
+    <link rel="stylesheet" type="text/css" href="semantic/dist/components/image.css">
+    <link rel="stylesheet" type="text/css" href="semantic/dist/components/menu.css">
 
-    <link rel="stylesheet" type="text/css" href="../dist/components/divider.css">
-    <link rel="stylesheet" type="text/css" href="../dist/components/dropdown.css">
-    <link rel="stylesheet" type="text/css" href="../dist/components/segment.css">
-    <link rel="stylesheet" type="text/css" href="../dist/components/button.css">
-    <link rel="stylesheet" type="text/css" href="../dist/components/list.css">
-    <link rel="stylesheet" type="text/css" href="../dist/components/icon.css">
-    <link rel="stylesheet" type="text/css" href="../dist/components/sidebar.css">
-    <link rel="stylesheet" type="text/css" href="../dist/components/transition.css">
+    <link rel="stylesheet" type="text/css" href="semantic/dist/components/divider.css">
+    <link rel="stylesheet" type="text/css" href="semantic/dist/components/dropdown.css">
+    <link rel="stylesheet" type="text/css" href="semantic/dist/components/segment.css">
+    <link rel="stylesheet" type="text/css" href="semantic/dist/components/button.css">
+    <link rel="stylesheet" type="text/css" href="semantic/dist/components/list.css">
+    <link rel="stylesheet" type="text/css" href="semantic/dist/components/icon.css">
+    <link rel="stylesheet" type="text/css" href="semantic/dist/components/sidebar.css">
+    <link rel="stylesheet" type="text/css" href="semantic/dist/components/transition.css">
 
     <style type="text/css">
 
@@ -114,14 +114,17 @@
         font-size: 1.5em;
       }
     }
-
-
   </style>
 
   <script src="assets/library/jquery.min.js"></script>
-  <script src="../dist/components/visibility.js"></script>
-  <script src="../dist/components/sidebar.js"></script>
-  <script src="../dist/components/transition.js"></script>
+  <script src="semantic/dist/components/visibility.js"></script>
+  <script src="semantic/dist/components/sidebar.js"></script>
+  <script src="semantic/dist/components/transition.js"></script>
+  <script src="src/adapter.js"></script>
+  <script src="src/user.js"></script>
+  <script src="src/note.js"></script>
+  <script src="src/notesList.js"></script>
+  <script src="src/index.js"></script>
 
   <script>
   $(document)
@@ -167,13 +170,12 @@
 </div>
 
 <!-- Sidebar Menu -->
-<div class="ui vertical inverted sidebar menu">
-  <a class="active item">Notes</a>
-  <a class="item">Note1</a>
-  <a class="item">Note2</a>
-  <a class="item">Note3</a>
-  <a class="item">Note4</a>
-  <a class="item">Note5</a>
+<div class="ui vertical visible inverted sidebar menu">
+<!--<div class="ui vertical visible sticky menu fixed top">-->
+  <a class="item"><h1>Notes</h1></a>
+  <div id="side-bar-notes"></div>
+
+
 </div>
 
 
@@ -217,17 +219,28 @@
 
   <br><br><br><br><br>
 
+<!-- Create a Note Form -->
 <div class="ui container">
-  <div class="ui form">
-    <div class="field">
-      <h3 class="ui header">New Note</h3>
-      <textarea></textarea>
-      <div class="item">
-        <a class="ui button">Save</a>
-        <a class="ui button">Reset</a>
-      </div>
+  <h3 class="ui-header">Create a New Note</h3>
+  <div class="ui inverted segment">
+    <div class="ui inverted form">
+      <div class="two fields">
+          <div class="field">
+            <label>Title</label>
+              <input id="notetitle" placeholder="Title" type="text">
+              <br><br>
+            <label>Note</label>
+              <textarea id="notebody" placeholder="Type your note text here"></textarea>
+            </div>
+          </div>
+        <div class="inline field"></div>
+      <div class="ui submit button" id="addbtn">Submit</div>
     </div>
   </div>
+</div>
+
+<div class="ui container">
+  <ul id="notes-list"></ul>
 </div>
   <br><br><br><br><br>
 
