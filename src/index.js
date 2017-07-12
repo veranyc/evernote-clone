@@ -1,21 +1,23 @@
 $(document).ready(function(){
   const newNote = new Note()
-  addNewNote(notesList)
+  const notesList = new NotesList()
+  let newAdp = new Adapter()
+  addNewNote(newAdp, notesList)
   // updateThisNote(notesList)
 })
 
-function addNewNote(notesList) {
+function addNewNote(adapter, notesList) {
   $("#addbtn").on("click", function(){
     event.preventDefault()
-    let newTitle = ${"#notetitle"}.val()
+    // debugger
+    let newTitle = $("#notetitle").val()
     let newBody = $("#notebody").val()
-    // adapter.addNote(title, body).then(stringify)
-    notesList.addNote(newTitle, newNote, newNoteNum)
+    notesList.addNote(newTitle, newBody)
+    adapter.addNote(newTitle, newBody)
     $("#notes-list").html(notesList.render())
-    $("#side-bar-notes").html(notesList.renderSideBarNote())
+    $("#side-bar-notes").html(notesList.renderSideBar())
     $("#notetitle").val('')
     $("#notebody").val('')
-    $("#noteid").val('')
   })
 }
 
@@ -31,4 +33,4 @@ function addNewNote(notesList) {
 //     $("#notetitle").val('')
 //     $("#notebody").val('')
 //   })
-}
+// }

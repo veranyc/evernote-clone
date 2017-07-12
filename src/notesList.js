@@ -3,8 +3,8 @@ class NotesList {
     this.notes = []
   }
 
-  addNote(title, body, noteId) {
-    const newNote = new Note(title, body, noteId)
+  addNote(title, body) {
+    const newNote = new Note(title, body)
     this.notes.push(newNote)
   }
 
